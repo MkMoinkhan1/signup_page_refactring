@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
+ * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+.main {
+  width: 100%;
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+.main .signup {
+  width: 65%;
+  height: 80vh;
+  background: transparent;
+  border-radius: 20px;
+  display: flex;
+}
+.main .signup .left-signup {
+  width: 40%;
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+  background: url(./assets/4.jpg);
+  background-size: cover;
+  background-position: center;
+  animation: slider 80s linear infinite ;
+}
+@keyframes slider {
+  0%{
+    background-image: url(./assets/3.jpg);
+  }
+  35%{
+    background-image: url(./assets/6.jpg);
+    animation-delay: 2s;
+  }
+  70%{
+    background-image: url(./assets/4.jpg);
+  }
+  100%{
+    background-image: url(./assets/1.jpg);
+    transition: all 0.3s;
+  }
+}
+.main .signup .left-signup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 0 0 20px;
+}
+
+.main .signup .right-signup {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 20px 20px 0;
+  flex-direction: column;
+  background: rgba( 255, 255, 255, 0.25 );
+  /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+  backdrop-filter: blur( 6px );
+  -webkit-backdrop-filter: blur( 6px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.main .signup .right-signup .form-div {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form {
+  width: 80%;
+}
+.main .signup .right-signup .form-div input[type="text"],
+input[type="number"],input[type="password"] {
+  padding: 10px 20px;
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  border: 1px solid;
+  font-size: 0.9rem;
+  color: black;
+}
+input:active{
+    background-color: transparent;
+}
+.main .signup .right-signup .form-div input,
+button {
+  margin: 5px 0;
+  font-family: "Josefin Sans", sans-serif;
+  background: transparent;
+  color: black;
+}
+.main .signup .right-signup .form-div .date {
+  padding: 8px 20px;
+  width: 80%;
+}
+button {
+    padding: 13px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #15284c;
+    color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+button:hover{
+    transition: all 0.3s linear;
+    color: white;
+    background-color: #020d21;
+
+}
+::placeholder{
+    color: black;
+}
+h1 {
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+  margin: 5px 0;
+}
+label {
+  font-size: 1rem;
+  color: #000000;
+  margin: 0 15px;
+}
+input[type="radio"]{
+    width: 20px;
+    height: 15px;
+    accent-color: #15284c;
+}
+small {
+  color: red;
+  font-size: 0.8rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+}
+
+
+@media (max-width: 1000px) {
+	.main .signup{
+		width: 80%;
+	}
+  }
+@media (max-width: 700px) {
+	.main .signup .right-signup .form-div input[type="text"], input[type="number"],input[type="password"] {
+        width: 100%;
+    }
+    label{
+        margin:0 4px;
+    }
+  }
+  @media (max-width: 650px) {
+	.main .signup .left-signup {
+        display: none;
+    }
+    .main .signup{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .main .signup .right-signup {
+        width: 90%;
+    }.main .signup .right-signup .form-div{
+      width: 100%;
+    }
+  }

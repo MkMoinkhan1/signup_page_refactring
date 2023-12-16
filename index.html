@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Assignment 1</title>
+  </head>
+  <body>
+    <!-- The signup page should have fields mentioned below: 
+Full name* - Must contain min 5 and max 20 characters
+Email* - Must have email validation with "@" and "." 
+Phone* - Must be number with 10 character
+Address - It is optional and if user enters it should be minimum 10 and max 100 characters
+DOB* - It should be date picker and it is compulsory field
+Gender* - It should be radio button with  man and women as options.
+Password* - Must have one upper case, numbers, special character and minimum 8 characters
+Confirm Password* - It should match with password 
+Submit button - It should be disabled till all field are valid. 
+Note:  All fields which has * on it are compulsory field. The design should be good and there should not be any HTML validation it should be done through JS only. The error should be displayed below the respective field in red color. The error should also be displayed when ever user types any content in input field. -->
+    <div class="main">
+      <video autoplay muted loop id="myVideo">
+        <source src="/assets/video.mp4" type="video/mp4" />
+      </video>
+      <div class="signup">
+        <div class="left-signup">
+        </div>
+        <div class="right-signup">
+          <div class="form-div">
+            <form
+              action="pindex.html"
+              id="form-field"
+              onsubmit="return formSubmit()"
+              target="_blank"
+            >
+              <h1>SignUp</h1>
+              <input
+                type="text"
+                id="username"
+                placeholder="&#xF007;  Username"
+                style="font-family: Arial, FontAwesome; color: black"
+                oninput="validateUserName()"
+                autocomplete="off"
+              />
+              <br />
+              <small id="name-small"></small><br />
+              <input
+                type="text"
+                id="email"
+                placeholder="&#xf0e0;  Email"
+                style="font-family: Arial, FontAwesome"
+                oninput="validateEmail()"
+                autocomplete="off"
+              /><br />
+              <small id="email-small"></small><br />
+
+              <input
+                type="number"
+                id="phone"
+                placeholder="&#xf095;  Phone"
+                style="font-family: Arial, FontAwesome"
+                oninput="validatePhone()"
+                autocomplete="off"
+              /><br />
+              <small id="phone-small"></small><br />
+
+              <input
+                type="text"
+                id="address"
+                placeholder="&#xf2bb;  Address"
+                style="font-family: Arial, FontAwesome"
+                oninput="validateAddress()"
+                autocomplete="off"
+              /><br />
+              <small id="address-small"></small><br />
+              <input
+                type="text"
+                id="dob"
+                placeholder="&#xf133;  Date Of Birth "
+                style="font-family: Arial, FontAwesome"
+                class="date"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+                oninput="validateDateOfBirth()"
+                autocomplete="off"
+              /><br />
+              <small id="dob-small"></small><br />
+
+              <label for="check">Male</label>
+              <input
+                type="radio"
+                name="radio"
+                value="male"
+                id="check-male"
+                onchange="validateCheck()"
+              />
+              <label for="check">Female</label>
+              <input
+                type="radio"
+                id="check-female"
+                name="radio"
+                value="female"
+                onchange="validateCheck()"
+                autocomplete="off"
+              /><br />
+              <small id="check-small"></small><br />
+              <input
+                type="password"
+                placeholder="&#xf023; Password"
+                id="password"
+                style="font-family: Arial, FontAwesome"
+                oninput="validatePassword()"
+                autocomplete="off"
+              /><br />
+              <small id="password-small"></small><br />
+
+              <input
+                type="text"
+                placeholder="&#xf023;  Confirm Password"
+                id="confirm-password"
+                style="font-family: Arial, FontAwesome"
+                oninput="validateConfirmPassword()"
+                autocomplete="off"
+              /><br />
+              <small id="confirm-password-small"></small><br />
+
+              <button type="submit">SignUp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
